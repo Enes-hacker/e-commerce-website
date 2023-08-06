@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <title>Document</title>
+    <style>
+        .imi {
+            border: 1px solid black;
+            border-radius: 0.4rem;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        .title h2,
+        p {
+            color: black;
+        }
+
+        .logo {
+            width: 3.5rem;
+        }
+
+        .nv {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .remove-btn {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <body>
+        <!--HEADER-->
+        <div class="container-fluid nv bg-primary">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary offset-lg-1">
+                <div class="container-fluid ">
+                    <a class="navbar-brand" href="#">
+                        <img src="images/global-commerce.png" class="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Pricing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="mychart.html">My Chart</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Categories
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="bags.html">Bags</a></li>
+                                    <li><a class="dropdown-item" href="shoes.html">Shoes</a></li>
+                                    <li><a class="dropdown-item" href="tshirts.html">T-shirts</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!--HEADER END-->
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous">
+            </script>
+
+
+        <!--Sort by price and name both ascending and descending-->
+
+        <div class="container-fluid pt-5 mt-5">
+            <div class="row">
+                <div class="col-2 mt-5">
+                    <div class="display-5">Filters</div>
+                </div>
+                <div class="col-8 title mt-5">
+                    <h2 class="text-center">Shoes</h2>
+                    <p class="text-center">Customized bespoke product design white unisex shoes inspired by nike,
+                        attractive
+                        aesthetics,
+                        3D product model render, 4k UHD, neutral background, studio lighting
+                    </p>
+                    
+                </div>
+                <div class="col-lg-2 col-sm-12  mt-5 pt-5">
+                    <select class="form-control" id="select">
+                        <option>Sort by</option>
+                        <option onclick="sortByNameAsc()">Name: a-z</option>
+                        <option onclick="sortByNameDesc()">Name: z-a</option>
+                        <option onclick="ascending()">Name: price ascending</option>
+                        <option onclick="descending()">Name: price descending</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!--Sort by price and name both ascending and descending end-->
+
+        <!--Shoes-->
+        <div class="container-fluid">
+            <div class="row">
+                <!--Filter-->
+                <div class="col-lg-2 col-sm-12 col-md-6">
+
+                    <div>
+
+                        <div>Colors:</div>
+                        <input type="checkbox" class="color" value="black" />
+                        <span>Black</span>
+                        <input type="checkbox" class="color" value="white" />
+                        <span>White</span>
+                        <input type="checkbox" class="color" value="blue" />
+                        <span>Blue</span>
+                        <input type="checkbox" class="color" value="red" />
+                        <span>Red</span>
+                    </div>
+                    <div>
+                        <div>Sizes:</div>
+                        <select id="size" class="form-control">
+                            <option value="">Select Size</option>
+                            <option value="35">35</option>
+                            <option value="36">36</option>
+                            <option value="37">37</option>
+                            <option value="38">38</option>
+                            <option value="39">39</option>
+                            <option value="40">40</option>
+                            <option value="41">41</option>
+                            <option value="42">42</option>
+                            <option value="43">43</option>
+                        </select>
+                    </div>
+                    <div class="row"> <!--PRICE RANGE FROM TO -->
+                        <div class="col-6">
+                            <label for="">From</label>
+                            <input type="number" name="fromPrice" class="form-control">
+                        </div>
+
+                        <div class="col-6">
+                            <label for="">To</label>
+                            <input type="number" name="toPrice" class="form-control">
+                        </div>
+                    </div>
+                    <div class="mt-3"> <!--FILTER BUTTON-->
+                        <button id="filter" class="btn btn-primary">Filter</button>
+                        <button id="reset" class="btn btn-warning">Reset</button>
+
+                    </div>
+
+
+
+                </div>
+
+
+                <!--products End-->
+
+
+                <!--display products-->
+
+                <div class="col-10" id="products">
+
+
+                </div>
+                <div class="col-4 offset-6 p-2">
+                    <button id="load" class="btn btn-outline-primary" onclick="loadmore()">Load More</button>
+                </div>
+
+                <div class="col-6 mt-3">
+                    <canvas id="myChart"></canvas>
+                </div>
+                <div class="col-6 mt-3">
+                    <h3>My Chart</h3>
+                    <ul id="chartList"></ul>
+                </div>
+
+                
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <!--Shoes End-->
+        <script>
+            const PRODUCTS = [
+                { name: 'A Nike Shoe', description: 'lorem ipsum dolor sit amet', price: 40, size: 35, color: 'black', image: '/shoes/shoe1.jpg', rating: 4.8 },
+                { name: 'B Nike Shoe', description: 'lorem ipsum dolor sit amet', price: 50, size: 36, color: 'red', image: '/shoes/shoe2.jpg', rating: 4.8 },
+                { name: 'C Nike Shoe', description: 'lorem ipsum dolor sit amet', price: 55, size: 37, color: 'blue', image: '/shoes/shoe3.jpg', rating: 3.8 },
+                { name: 'Z Nike Shoe', description: 'lorem ipsum dolor sit amet', price: 60, size: 38, color: 'white', image: '/shoes/shoe4.png', rating: 4.1 },
+                { name: 'A Nike Shoe', description: 'lorem ipsum dolor sit amet', price: 65, size: 39, color: 'black', image: '/shoes/shoe1.jpg', rating: 4.4 },
+                { name: 'B Nike Shoe', description: 'lorem ipsum dolor sit amet', price: 70, size: 39, color: 'red', image: '/shoes/shoe2.jpg', rating: 4.9 },
+                { name: 'C Nike Shoe', description: 'lorem ipsum dolor sit amet', price: 35, size: 40, color: 'blue', image: '/shoes/shoe3.jpg', rating: 2.8},
+                { name: 'Z Nike Shoe', description: 'lorem ipsum dolor sit amet', price: 35, size: 41, color: 'white', image: '/shoes/shoe4.png', rating: 3.8 },
+                { name: 'A Nike Shoe', description: 'lorem ipsum dolor sit amet', price: 40, size: 42, color: 'black', image: '/shoes/shoe1.jpg', rating: 3.9},
+                { name: 'B Nike Shoe', description: 'lorem ipsum dolor sit amet', price: 40, size: 43, color: 'red', image: '/shoes/shoe2.jpg',rating: 5 },
+                { name: 'C Nike Shoe', description: 'lorem ipsum dolor sit amet', price: 40, size: 36, color: 'blue', image: '/shoes/shoe3.jpg', rating: 4 },
+                { name: 'Z Nike Shoe', description: 'lorem ipsum dolor sit amet', price: 45, size: 43, color: 'white', image: '/shoes/shoe4.png', rating: 5 },
+                { name: 'A Nike Shoe', description: 'lorem ipsum dolor sit amet', price: 50, size: 42, color: 'black', image: '/shoes/shoe1.jpg', rating: 5 },
+                { name: 'B Nike Shoe', description: 'lorem ipsum dolor sit amet', price: 50, size: 37, color: 'red', image: '/shoes/shoe2.jpg', rating: 5 },
+                { name: 'C Nike Shoe', description: 'lorem ipsum dolor sit amet', price: 60, size: 38, color: 'blue', image: '/shoes/shoe3.jpg', rating: 4 },
+                { name: 'Z Nike Shoe', description: 'lorem ipsum dolor sit amet', price: 60, size: 40, color: 'white', image: '/shoes/shoe4.png', rating: 3 },
+                { name: 'A Nike Shoe', description: 'lorem ipsum dolor sit amet', price: 55, size: 40, color: 'black', image: '/shoes/shoe1.jpg', rating: 3.8 },
+                { name: 'B Nike Shoe', description: 'lorem ipsum dolor sit amet', price: 65, size: 41, color: 'red', image: '/shoes/shoe2.jpg',rating: 3.8 },
+                { name: 'C Nike Shoe', description: 'lorem ipsum dolor sit amet', price: 100, size: 37, color: 'blue', image: '/shoes/shoe3.jpg', rating: 3.8 },
+                { name: 'Z Nike Shoe', description: 'lorem ipsum dolor sit amet', price: 120, size: 42, color: 'white', image: '/shoes/shoe4.png', rating: 3.8 },
+                { name: 'A Nike Shoe', description: 'lorem ipsum dolor sit amet', price: 40, size: 35, color: 'black', image: '/shoes/shoe1.jpg', rating: 4.5 },
+                { name: 'B Nike Shoe', description: 'lorem ipsum dolor sit amet', price: 50, size: 36, color: 'red', image: '/shoes/shoe2.jpg', rating: 3.8 },
+            ];
+
+            /* const productsPerLoad = 5;
+             let currentIndex = 0;*/
+
+            function renderProducts(products) {
+                $('#products').empty(); // Clear previous products
+                let html = '<div class="row gx-3 gy-3 mt-3">';
+                for (let i = 0; i < products.length; i++) {
+                    html += '<div class="col-sm-12 col-md-5 col-lg-2 imi p-2 m-1">';
+                    html += `<img src="${products[i].image}" class="img-fluid p-2" />`;
+                    html += `<h3>${products[i].name}</h3>`;
+                    html += `<p>${products[i].description}</p>`;
+                    html += `<div class="price" data-price="price">${products[i].price} &euro;</div>`;
+                    html += `<div>${products[i].size} ${products[i].color} </div>`;
+
+                    // Display star icons based on the product rating
+                    html += '<div>Rating: ';
+                    for (let j = 1; j <= 5; j++) {
+                        if (j <= products[i].rating) {
+                            html += '<i class="fas fa-star"></i> '; // Full star icon
+                        } else {
+                            html += '<i class="far fa-star"></i> '; // Empty star icon
+                        }
+                    }
+                    html += `(${products[i].rating})</div>`;
+
+                    html += `<button class="btn btn-primary" onclick="addToChart(${i})">Add to Chart</button>`;
+                    html += '</div>';
+                }
+                html += '</div>';
+                $('#products').html(html);
+            }
+
+            /*function loadmore() {
+                 const productsToShow = PRODUCTS.slice(currentIndex, currentIndex + productsPerLoad);
+                 renderProducts(productsToShow);
+                 currentIndex += productsPerLoad;
+     
+                 if (currentIndex >= PRODUCTS.length) {
+                     $("#load").hide();
+                 } else {
+                     $("#load").show();
+                 }
+             }
+     
+             $(function () {
+                 loadmore(); // Call loadmore() initially to display the first set of products
+     
+                 $("#load").on("click", function () {
+                     loadmore(); // Call loadmore() again when the "Load More" button is clicked
+                 });
+             });*/
+            let chartData = [];
+            let chartLabels = [];
+            let selectedProducts = [];
+            let myChart;
+
+
+            function updateChart() {
+                if (myChart) {
+                    myChart.destroy();
+                }
+
+                chartData = selectedProducts.map(product => product.price);
+                chartLabels = selectedProducts.map(product => product.name);
+
+
+            }
+
+            function addToChart(index) {
+                const product = PRODUCTS[index];
+                selectedProducts.push(product);
+                updateChart();
+                updateChartList();
+
+                // Save the selected products to localStorage
+                localStorage.setItem('selectedProducts', JSON.stringify(selectedProducts));
+                alert(`${product.name} has been added to your chart.`);
+            }
+
+            function updateChartList() {
+                const chartList = document.getElementById('chartList');
+                chartList.innerHTML = '';
+                for (const product of selectedProducts) {
+                    const listItem = document.createElement('li');
+
+                    // Create an image element for the product
+                    const productImage = document.createElement('img');
+                    productImage.src = product.image;
+                    productImage.alt = product.name;
+                    productImage.style.width = '100px'; // Set the width for better display
+                    listItem.appendChild(productImage);
+
+                    // Create a span element for the product name and price
+                    const productInfo = document.createElement('span');
+                    productInfo.innerText = `${product.name} - Price: ${product.price} € `;
+                    listItem.appendChild(productInfo);
+
+                    // Create a remove button
+                    const removeButton = document.createElement('button');
+                    removeButton.innerText = 'Remove';
+                    removeButton.className = 'remove-btn';
+                    removeButton.addEventListener('click', () => {
+                        removeFromChart(product);
+                    });
+                    listItem.appendChild(removeButton);
+
+                    chartList.appendChild(listItem);
+                }
+            }
+
+            // Function to remove a product from the chart
+            function removeFromChart(productToRemove) {
+                selectedProducts = selectedProducts.filter((product) => product !== productToRemove);
+                updateChart();
+                updateChartList();
+            }
+
+            function addDataPoint() {
+                const randomValue = Math.floor(Math.random() * 100); // Generate a random value for the data point
+                const randomLabel = `Label ${chartLabels.length + 1}`; // Generate a label for the data point
+
+                chartData.push(randomValue);
+                chartLabels.push(randomLabel);
+
+                updateChart();
+            }
+
+            // Call the initial chart creation
+            updateChart();
+
+            $(function () {
+                $('#reset').click(function () { //reset all options
+                    window.location.reload(true);
+
+                });
+
+                $('#filter').click(function () {
+                    let size = $('#size').val();
+                    let fromPrice = $('input[name="fromPrice"]').val();
+                    let toPrice = $('input[name="toPrice"]').val();
+                    let selectedColorsElements = $('.color:checked');
+                    let selectedColors = [];
+                    for (let i = 0; i < selectedColorsElements.length; i++) {
+                        selectedColors.push(selectedColorsElements[i].value);
+
+                    }
+
+                    let productsToFilter = PRODUCTS;
+
+                    if (size) {
+                        productsToFilter = productsToFilter.filter(p => p.size == size);
+                    }
+
+                    if (fromPrice) {
+                        productsToFilter = productsToFilter.filter(p => p.price >= fromPrice);
+                    }
+
+                    if (toPrice) {
+                        productsToFilter = productsToFilter.filter(p => p.price <= toPrice);
+                    }
+
+                    if (selectedColors.length > 0) {
+                        productsToFilter = productsToFilter.filter(p => selectedColors.includes(p.color));
+                    }
+
+                    renderProducts(productsToFilter);
+
+
+                });
+
+
+                renderProducts(PRODUCTS);
+            });
+
+            /*PRICE SORT BY ASCENDING EXPENSIVE TO CHEAPER*/
+            function ascending() {
+                PRODUCTS.sort(function (a, b) {
+                    return a.price - b.price;
+                });
+
+                renderProducts(PRODUCTS);
+            }
+            /*PRICE SORT BY DESCENDING CHEAPER TO EXPENSIVE*/
+            function descending() {
+                PRODUCTS.sort(function (a, b) {
+                    return b.price - a.price;
+                });
+
+                renderProducts(PRODUCTS);
+            }
+
+            /*SORT NAME BY ASCENDING FROM A TO Z*/
+            function sortByNameAsc() {
+                PRODUCTS.sort(function (a, b) {
+                    var nameA = a.name.toUpperCase();
+                    var nameB = b.name.toUpperCase();
+                    return nameA.localeCompare(nameB);
+                });
+
+                renderProducts(PRODUCTS);
+            }
+
+            /*SORT NAME BY DESCENDING FROM Z TO A*/
+            function sortByNameDesc() {
+                PRODUCTS.sort(function (a, b) {
+                    var nameA = a.name.toUpperCase();
+                    var nameB = b.name.toUpperCase();
+                    return nameB.localeCompare(nameA);
+                });
+
+                renderProducts(PRODUCTS);
+            }
+
+            /* $(document).ready(function(){
+                 $(".imi").slice(0,3).show();
+                 $("#load").on("click",function(){
+                    $(".imi:hidden").slice(0,3).show();
+         
+                    if($(".imi:hidden").length==3)
+                    {
+                     $("#load").fadeOut();
+                    }
+                     $(this).fadeOut();
+         
+                 });
+                 renderProducts(PRODUCTS);
+             });*/
+        </script>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
+    </body>
+
+</html>

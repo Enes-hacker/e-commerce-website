@@ -62,4 +62,8 @@ body{
     color: #fff;
 }
 
+iframe{
+    display: block;
+}
+
 /*FOOTER END*/

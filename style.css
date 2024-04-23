@@ -6,6 +6,10 @@
     color: orange;
 }
 
+body{
+    overflow-x: hidden;
+}
+
 .nv {
     position: fixed;
     top: 0;
